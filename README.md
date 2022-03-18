@@ -1,6 +1,20 @@
 # franke-apollo-graphql-example
 Re-acquaint with GraphQL by setting up an Apollo basic Endpoint and Client Example
 
+## Prerequisites MacOSX
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew doctor
+export PATH="/usr/local/bin:$PATH"
+brew install node
+node -v
+npm -v
+brew update
+brew upgrade node
+npm install -g grunt-cli
+```
+
 ## Use npm to initialize new project
 ```
 npm init --yes
@@ -74,7 +88,7 @@ server.listen().then(({ url }) => {
 });
 ```
 
-##Run the Apollo Graphql Server
+## Run the Apollo Graphql Server
 ```
 node index.js
 ```
@@ -83,7 +97,7 @@ The server is up/listening when you see:
 🚀 Server ready at http://localhost:4000/
 ```
 
-##Test Query with Curl
+## Test Query with Curl
 ```
 curl -X POST \
 -H "Content-Type: application/json" \
@@ -93,14 +107,14 @@ curl -X POST \
 http://localhost:4000
 ```
 
-##Response JSON
+## Response JSON
 The Response JSON will look like:
 
 ```
 {"data":{"books":[{"author":"Christopher Alexander","title":"The Timeless Way of Building","year":1979},{"author":"Robert C. Martin","title":"Clean Code","year":2009}]}}
 ```
 
-##Or Test with a GUI client 
+## Or Test with a GUI client 
 ```
 npx create-react-app express-graphql --template typescript
 cd express-graphql
@@ -110,6 +124,13 @@ npm install
 npm install express express-graphql graphql --save
 ```
 
-##TODO:  
-- Add JWT Validation - https://www.apollographql.com/blog/backend/auth/setting-up-authentication-and-authorization-apollo-federation/
-
+## TODO: 
+- Create JWT
+- Create Unit Tests - valid user 
+- Add JWT Validation 401 - https://www.apollographql.com/docs/apollo-server/schema/creating-directives/
+-- Create Unit Test - auth-provider error
+-- Add rule: claim auth-provider == SSO else 401 && logging && observability
+-- Create Unit Test - invalid email domain
+-- Add rule: validate email domain else 401 && logging && observability
+- Add RBAC and other schema endpoint for getUser();
+- Automate JWT Creation
