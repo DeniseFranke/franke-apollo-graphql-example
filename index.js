@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-/*jslint browser, node*/
-/*global caches, indexedDb*/
-
 const { ApolloServer, gql } = require("apollo-server");
 
 const typeDefs = gql`
