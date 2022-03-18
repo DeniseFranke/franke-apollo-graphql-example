@@ -128,9 +128,11 @@ npm install express express-graphql graphql --save
 - Create JWT
 - Create Unit Tests - valid user 
 - Add JWT Validation 401 - https://www.apollographql.com/docs/apollo-server/schema/creating-directives/
--- Create Unit Test - auth-provider error
--- Add rule: claim auth-provider == SSO else 401 && logging && observability
--- Create Unit Test - invalid email domain
--- Add rule: validate email domain else 401 && logging && observability
+- Create Unit Test for missing or invalid appname in request header
+- Add rule: claim appname == valid app name calling && logging && observability 
+- Create Unit Test - auth-provider error
+- Add rule: claim auth-provider == SSO else 401 && logging && observability
+- Create Unit Test - invalid email domain
+- Add rule: validate email domain else 401 && logging && observability
 - Add RBAC and other schema endpoint for getUser();
 - Automate JWT Creation
