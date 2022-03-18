@@ -1,12 +1,12 @@
 # franke-apollo-graphql-example
 Re-acquaint with GraphQL by setting up an Apollo basic Endpoint and Client Example
 
-##Use npm to initialize new project
+## Use npm to initialize new project
 ```
 npm init --yes
 ```
 
-##Install two dependencies for this project: apollo-server and graphql
+## Install two dependencies for this project: apollo-server and graphql
 ```
 npm install --save apollo-server graphql
 ```
