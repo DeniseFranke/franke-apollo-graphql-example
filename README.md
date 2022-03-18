@@ -30,7 +30,7 @@ The ApolloServer constructor requires two parameters: the schema definition and 
 
 ## Schema
 The Schema defines the API structures. 
-The `Book` type defines the queryable fields: `title` and `author`
+The `Book` type defines the queryable fields: `title`, `author` and `year`
 
 ## Query
 The "Query" type lists all available queries that clients can execute, and their return types
