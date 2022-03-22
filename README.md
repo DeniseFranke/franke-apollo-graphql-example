@@ -39,7 +39,7 @@ Server ready at http://localhost:3000/
 Run the following tests using a JWT created from: http://jwtbuilder.jamiekurtz.com/
 Replace the SAMPLE_JWT with your JWT created using the information provided in each test below
 
-##Run Test 1 - GOOD (Correct Key=‘NeverShareYourSecret’, auth-provider=SSO or , email=denise@parsleyhealth.com (email domain match))
+## Run Test 1 - GOOD (Correct Key=‘NeverShareYourSecret’, auth-provider=SSO or , email=denise@parsleyhealth.com (email domain match))
 {
     "iss": "Online JWT Builder",
     "iat": 1647810723,
@@ -50,13 +50,13 @@ Replace the SAMPLE_JWT with your JWT created using the information provided in e
     "auth-provider": “SSO”
 }
 
-###Request:
+### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
 http://localhost:3000/senior-parsley
 ```
 
-###Response:
+### Response:
 ```
 < content-type: application/json; charset=utf-8
 < cache-control: no-cache
@@ -70,7 +70,7 @@ http://localhost:3000/senior-parsley
 {"message":"You used a Valid JWT Token to access /restricted endpoint!"}
 ```
 
-##Run Test 2 - BAD Key:
+## Run Test 2 - BAD Key:
 {
     "iss": "Online JWT Builder",
     "iat": 1647810723,
@@ -81,13 +81,13 @@ http://localhost:3000/senior-parsley
     "auth-provider": "XYZ"
 }
 
-###Request:
+### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
 http://localhost:3000/senior-parsley
 ```
 
-###Response:
+### Response:
 ```
 * Connection #0 to host localhost left intact
 {"statusCode":401,"error":"Unauthorized","message":"Invalid token format","attributes":{"error":"Invalid token format"}}
@@ -110,7 +110,7 @@ curl -v -H "Authorization: SAMPLE_JWT" \
 http://localhost:3000/senior-parsley
 ```
 
-###Response:
+### Response:
 ```
 * Mark bundle as not supporting multiuse
 < HTTP/1.1 401 Unauthorized
