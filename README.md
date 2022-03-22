@@ -32,7 +32,7 @@ node server.js
 
 The server is up/listening when you see:
 ```
-Server ready at http://localhost:4000/
+Server ready at http://localhost:3000/
 ```
 
 # Run Tests
@@ -53,7 +53,7 @@ Replace the SAMPLE_JWT with your JWT created using the information provided in e
 ###Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -84,7 +84,7 @@ http://localhost:8000/senior-parsley
 ###Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -107,7 +107,7 @@ http://localhost:8000/senior-parsley
 ### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -140,7 +140,7 @@ http://localhost:8000/senior-parsley
 ### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ### Response:
