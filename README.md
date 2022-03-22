@@ -39,7 +39,8 @@ Server ready at http://localhost:3000/
 Run the following tests using a JWT created from: http://jwtbuilder.jamiekurtz.com/
 Replace the SAMPLE_JWT with your JWT created using the information provided in each test below
 
-## Run Test 1 - GOOD (Correct Key=‘NeverShareYourSecret’, auth-provider=SSO or , email=denise@parsleyhealth.com (email domain match))
+## Run Test 1 - GOOD 
+(Correct Key=‘NeverShareYourSecret’, auth-provider=SSO or , email=denise@parsleyhealth.com (email domain match))
 {
     "iss": "Online JWT Builder",
     "iat": 1647810723,
@@ -126,7 +127,7 @@ http://localhost:3000/senior-parsley
 {"statusCode":401,"error":"Unauthorized","message":"Invalid credentials","attributes":{"error":"Invalid credentials"}}
 ```
 
-# Run Test 4 - BAD email:
+## Run Test 4 - BAD email:
 {
     "iss": "Online JWT Builder",
     "iat": 1647810723,
