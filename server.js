@@ -1,7 +1,7 @@
 const Hapi        = require('@hapi/hapi');
 const hapiAuthJWT = require('./node_modules/hapi-auth-jwt2/lib/');
 const JWT         = require('jsonwebtoken');  // used to sign our content
-const port        = process.env.PORT || 8000; // allow port to be set
+const port        = process.env.PORT || 3000; // allow port to be set
 
 const secret = 'NeverShareYourSecret'; // Never Share This! even in private GitHub repos!
 

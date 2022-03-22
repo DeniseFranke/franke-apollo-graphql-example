@@ -32,7 +32,7 @@ node server.js
 
 The server is up/listening when you see:
 ```
-Server ready at http://localhost:4000/
+Server ready at http://localhost:3000/
 ```
 
 # Run Tests
@@ -53,7 +53,7 @@ Replace the SAMPLE_JWT with your JWT created using the information provided in e
 ###Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -84,7 +84,7 @@ http://localhost:8000/senior-parsley
 ###Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -107,7 +107,7 @@ http://localhost:8000/senior-parsley
 ### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ###Response:
@@ -140,7 +140,7 @@ http://localhost:8000/senior-parsley
 ### Request:
 ```
 curl -v -H "Authorization: SAMPLE_JWT \
-http://localhost:8000/senior-parsley
+http://localhost:3000/senior-parsley
 ```
 
 ### Response:
@@ -157,3 +157,12 @@ http://localhost:8000/senior-parsley
 * Connection #0 to host localhost left intact
 {"statusCode":401,"error":"Unauthorized","message":"Invalid credentials","attributes":{"error":"Invalid credentials"}}
 ```
+
+# Next Steps
+## Create routes to be protected:
+https://github.com/cremalab/hapi-react-boilerplate/wiki/Authentication%3AJWT%3A-Protecting-routes-with-JWT2
+## Deploy as a container with:
+https://github.com/DeniseFranke/franke-apollo-graphql-example/new/main?filename=.github%2Fworkflows%2Faws.yml&workflow_template=aws  
+## Or deploy with  Terraform:
+https://github.com/DeniseFranke/franke-apollo-graphql-example/new/main?filename=.github%2Fworkflows%2Fterraform.yml&workflow_template=terraform
+
