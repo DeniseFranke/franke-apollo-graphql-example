@@ -41,20 +41,18 @@ Replace the SAMPLE_JWT with your JWT created using the information provided in e
 
 ## Run Test 1 - GOOD 
 (Correct Key=‘NeverShareYourSecret’, auth-provider=SSO or , email=denise@parsleyhealth.com (email domain match))
+
+Generate JWToken using the following claims:
 {
-    "iss": "Online JWT Builder",
-    "iat": 1647810723,
-    "exp": 1679346723,
     "aud": "localhost:3000",
-    "sub": "denise@parsleyhealth.com",
     "email": "denise@parsleyhealth.com",
     "auth-provider": “SSO”
 }
 
 ### Request:
 ```
-curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:3000/senior-parsley
+curl -v -H "Authorization: SAMPLE_JWT" -H "appname: senior-parsley" \
+http://localhost:3000
 ```
 
 ### Response:
@@ -84,8 +82,8 @@ http://localhost:3000/senior-parsley
 
 ### Request:
 ```
-curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:3000/senior-parsley
+curl -v -H "Authorization: SAMPLE_JWT" -H "appname: senior-parsley" \
+http://localhost:3000
 ```
 
 ### Response:
@@ -107,8 +105,8 @@ http://localhost:3000/senior-parsley
 
 ### Request:
 ```
-curl -v -H "Authorization: SAMPLE_JWT" \
-http://localhost:3000/senior-parsley
+curl -v -H "Authorization: SAMPLE_JWT" -H "appname: senior-parsley" \
+http://localhost:3000
 ```
 
 ### Response:
@@ -140,8 +138,8 @@ http://localhost:3000/senior-parsley
 
 ### Request:
 ```
-curl -v -H "Authorization: SAMPLE_JWT \
-http://localhost:3000/senior-parsley
+curl -v -H "Authorization: SAMPLE_JWT" -H "appname: senior-parsley" \
+http://localhost:3000
 ```
 
 ### Response:
@@ -158,6 +156,37 @@ http://localhost:3000/senior-parsley
 * Connection #0 to host localhost left intact
 {"statusCode":401,"error":"Unauthorized","message":"Invalid credentials","attributes":{"error":"Invalid credentials"}}
 ```
+
+## Run Test 5 - No AppName - (NOTE: Could have used url with appname to redirect; however, instructions called for request-header with appname value):
+{
+    "aud": "localhost:3000",
+    "email": "denise@denisefranke.com",
+    "auth-provider": "SSO"
+}
+
+### Request:
+```
+curl -v -H "Authorization: SAMPLE_JWT" \
+http://localhost:3000
+```
+
+### Response:
+```
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< content-type: application/json; charset=utf-8
+< cache-control: no-cache
+< content-length: 27
+< accept-ranges: bytes
+< Date: Wed, 23 Mar 2022 01:11:02 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< 
+* Connection #0 to host localhost left intact
+{"text":"Invalid App Name"}
+```
+
+
 
 # Next Steps
 ## Create routes to be protected:

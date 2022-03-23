@@ -8,8 +8,8 @@ const secret = 'NeverShareYourSecret'; // Never Share This! even in private GitH
 const validAuthProviders = ["SSO", "user-pass"]
 
 const validate = async function (decoded, request, h) {
-  var idxEmail = decoded.email.indexOf('@parsleyhealth.com');
-  var authProvider = decoded['auth-provider'];
+  const idxEmail = decoded.email.indexOf('@parsleyhealth.com');
+  const authProvider = decoded['auth-provider'];
   console.log(decoded);
   if (idxEmail > -1 && validAuthProviders.indexOf(authProvider) > -1) {
     return { isValid : true };
@@ -31,19 +31,15 @@ const init = async() => {
 
   server.route([
     {
-      method: "GET", path: "/", config: { auth: false },
+      method: 'GET', path: '/', config: { auth: 'jwt' }, 
       handler: function(request, h) {
-
-        return {text: 'Token not required'};
-      }
-    },
-    {
-      method: 'GET', path: '/senior-parsley', config: { auth: 'jwt' },
-      handler: function(request, h) {
-        const response = h.response({message: 'You used a Valid JWT Token to access /senior-parsley endpoint!'});
-        response.header("Authorization", request.headers.authorization);
-
-        return response;
+        if ("senior-parsley" == request.headers['appname']) {
+          const response = h.response({message: 'You used a Valid JWT Token to access senior-parsley endpoint!'});
+          response.header("Authorization", request.headers.authorization);
+          return response;
+        } else {
+          return {text: 'Invalid App Name'};
+        }
       }
     }
   ]);
