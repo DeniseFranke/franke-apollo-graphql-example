@@ -10,7 +10,6 @@ const validAuthProviders = ["SSO", "user-pass"]
 const validate = async function (decoded, request, h) {
   const idxEmail = decoded.email.indexOf('@parsleyhealth.com');
   const authProvider = decoded['auth-provider'];
-  console.log(decoded);
   if (idxEmail > -1 && validAuthProviders.indexOf(authProvider) > -1) {
     return { isValid : true };
   } else {
